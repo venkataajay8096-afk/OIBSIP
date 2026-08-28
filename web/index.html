@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OASIS INFOBYTE - Android Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header Banner -->
+        <header class="header">
+            <div class="badge">OASIS INFOBYTE INTERNSHIP TASK</div>
+            <h1>Android Calculator App</h1>
+            <p>Java Logic & XML Layout Web Preview</p>
+        </header>
+
+        <!-- Smartphone Frame Wrapper -->
+        <div class="phone-frame">
+            <div class="phone-speaker"></div>
+            
+            <!-- Calculator App Screen -->
+            <div class="calculator-app">
+                <!-- Status Bar -->
+                <div class="status-bar">
+                    <span class="time" id="currentTime">09:41</span>
+                    <div class="status-icons">
+                        <svg width="16" height="12" viewBox="0 0 16 12" fill="currentColor">
+                            <path d="M12.5 0.5C12.5 0.223858 12.2761 0 12 0H1C0.723858 0 0.5 0.223858 0.5 0.5V11.5C0.5 11.7761 0.723858 12 1 12H12C12.2761 12 12.5 11.7761 12.5 11.5V0.5Z"/>
+                        </svg>
+                        <span>5G</span>
+                        <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor">
+                            <rect x="0" y="7" width="3" height="5" rx="0.5"/>
+                            <rect x="5" y="5" width="3" height="7" rx="0.5"/>
+                            <rect x="10" y="2" width="3" height="10" rx="0.5"/>
+                            <rect x="15" y="0" width="3" height="12" rx="0.5"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Display Section -->
+                <div class="display-container" id="displayContainer">
+                    <div class="tv-expression" id="tvExpression"></div>
+                    <div class="tv-result" id="tvResult">0</div>
+                </div>
+
+                <!-- Keypad Grid -->
+                <div class="keypad-layout">
+                    <!-- Row 1 -->
+                    <button class="btn btn-clear" id="btnClear">C</button>
+                    <button class="btn btn-action" id="btnBackspace">⌫</button>
+                    <button class="btn btn-action" id="btnPercent">%</button>
+                    <button class="btn btn-operator" id="btnDivide">÷</button>
+
+                    <!-- Row 2 -->
+                    <button class="btn btn-number" id="btn7">7</button>
+                    <button class="btn btn-number" id="btn8">8</button>
+                    <button class="btn btn-number" id="btn9">9</button>
+                    <button class="btn btn-operator" id="btnMultiply">×</button>
+
+                    <!-- Row 3 -->
+                    <button class="btn btn-number" id="btn4">4</button>
+                    <button class="btn btn-number" id="btn5">5</button>
+                    <button class="btn btn-number" id="btn6">6</button>
+                    <button class="btn btn-operator" id="btnSubtract">−</button>
+
+                    <!-- Row 4 -->
+                    <button class="btn btn-number" id="btn1">1</button>
+                    <button class="btn btn-number" id="btn2">2</button>
+                    <button class="btn btn-number" id="btn3">3</button>
+                    <button class="btn btn-operator" id="btnAdd">+</button>
+
+                    <!-- Row 5 -->
+                    <button class="btn btn-number btn-zero" id="btn0">0</button>
+                    <button class="btn btn-number" id="btnDot">.</button>
+                    <button class="btn btn-equals" id="btnEquals">=</button>
+                </div>
+            </div>
+            
+            <div class="home-indicator"></div>
+        </div>
+
+        <footer class="footer">
+            <p>Tested Scenarios: <code>5+3=8</code> | <code>10−4=6</code> | <code>6×7=42</code> | <code>20÷5=4</code> | <code>5.5+2.5=8</code> | <code>10÷0=Error</code></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

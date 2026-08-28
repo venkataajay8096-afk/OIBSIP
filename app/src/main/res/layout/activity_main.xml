@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- Calculator Display Screen -->
+    <LinearLayout
+        android:id="@+id/displayContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/display_background"
+        android:gravity="bottom|end"
+        android:orientation="vertical"
+        android:padding="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/keypadLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1">
+
+        <!-- Input / Working Expression Display -->
+        <TextView
+            android:id="@+id/tvExpression"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="start"
+            android:gravity="end"
+            android:maxLines="2"
+            android:textColor="@color/text_secondary"
+            android:textSize="24sp"
+            tools:text="125 × 4" />
+
+        <!-- Evaluated Result Display -->
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="start"
+            android:gravity="end"
+            android:maxLines="1"
+            android:text="0"
+            android:textColor="@color/text_primary"
+            android:textSize="44sp"
+            android:textStyle="bold"
+            tools:text="500" />
+    </LinearLayout>
+
+    <!-- Keypad Grid Layout for Buttons -->
+    <GridLayout
+        android:id="@+id/keypadLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:columnCount="4"
+        android:rowCount="5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/displayContainer"
+        app:layout_constraintVertical_weight="2">
+
+        <!-- Row 1 -->
+        <android.widget.Button
+            android:id="@+id/btnClear"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:background="@drawable/btn_clear"
+            android:text="@string/btn_clear"
+            android:textColor="@color/btn_clear_text"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <android.widget.Button
+            android:id="@+id/btnBackspace"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:background="@drawable/btn_action"
+            android:text="@string/btn_backspace"
+            android:textColor="@color/btn_action_text"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <android.widget.Button
+            android:id="@+id/btnPercent"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:background="@drawable/btn_action"
+            android:text="@string/btn_percent"
+            android:textColor="@color/btn_action_text"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <android.widget.Button
+            android:id="@+id/btnDivide"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:background="@drawable/btn_operator"
+            android:text="@string/btn_divide"
+            android:textColor="@color/btn_operator_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Row 2 -->
+        <android.widget.Button
+            android:id="@+id/btn7"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:background="@drawable/btn_number"
+            android:text="@string/btn_7"
+            android:textColor="@color/btn_number_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <android.widget.Button
+            android:id="@+id/btn8"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:background="@drawable/btn_number"
+            android:text="@string/btn_8"
+            android:textColor="@color/btn_number_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <android.widget.Button
+            android:id="@+id/btn9"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:background="@drawable/btn_number"
+            android:text="@string/btn_9"
+            android:textColor="@color/btn_number_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <android.widget.Button
+            android:id="@+id/btnMultiply"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:background="@drawable/btn_operator"
+            android:text="@string/btn_multiply"
+            android:textColor="@color/btn_operator_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Row 3 -->
+        <android.widget.Button
+            android:id="@+id/btn4"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:background="@drawable/btn_number"
+            android:text="@string/btn_4"
+            android:textColor="@color/btn_number_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <android.widget.Button
+            android:id="@+id/btn5"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:background="@drawable/btn_number"
+            android:text="@string/btn_5"
+            android:textColor="@color/btn_number_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <android.widget.Button
+            android:id="@+id/btn6"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:background="@drawable/btn_number"
+            android:text="@string/btn_6"
+            android:textColor="@color/btn_number_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <android.widget.Button
+            android:id="@+id/btnSubtract"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:background="@drawable/btn_operator"
+            android:text="@string/btn_subtract"
+            android:textColor="@color/btn_operator_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Row 4 -->
+        <android.widget.Button
+            android:id="@+id/btn1"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:background="@drawable/btn_number"
+            android:text="@string/btn_1"
+            android:textColor="@color/btn_number_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <android.widget.Button
+            android:id="@+id/btn2"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:background="@drawable/btn_number"
+            android:text="@string/btn_2"
+            android:textColor="@color/btn_number_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <android.widget.Button
+            android:id="@+id/btn3"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:background="@drawable/btn_number"
+            android:text="@string/btn_3"
+            android:textColor="@color/btn_number_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <android.widget.Button
+            android:id="@+id/btnAdd"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:background="@drawable/btn_operator"
+            android:text="@string/btn_add"
+            android:textColor="@color/btn_operator_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Row 5 -->
+        <android.widget.Button
+            android:id="@+id/btn0"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="2"
+            android:layout_margin="6dp"
+            android:background="@drawable/btn_number"
+            android:text="@string/btn_0"
+            android:textColor="@color/btn_number_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <android.widget.Button
+            android:id="@+id/btnDot"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:background="@drawable/btn_number"
+            android:text="@string/btn_dot"
+            android:textColor="@color/btn_number_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <android.widget.Button
+            android:id="@+id/btnEquals"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="6dp"
+            android:background="@drawable/btn_operator"
+            android:text="@string/btn_equals"
+            android:textColor="@color/btn_operator_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_app">#17181A</color>
+    <color name="bg_display">#222427</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#8E8E93</color>
+
+    <color name="btn_number_bg">#2E3137</color>
+    <color name="btn_number_text">#FFFFFF</color>
+
+    <color name="btn_operator_bg">#FF9F0A</color>
+    <color name="btn_operator_text">#FFFFFF</color>
+
+    <color name="btn_action_bg">#3A3D44</color>
+    <color name="btn_action_text">#29B6F6</color>
+
+    <color name="btn_clear_bg">#3A3D44</color>
+    <color name="btn_clear_text">#FF5252</color>
+
+    <color name="btn_equals_bg">#FF9F0A</color>
+    <color name="btn_equals_text">#FFFFFF</color>
+
+    <color name="ripple_color">#40FFFFFF</color>
+</resources>

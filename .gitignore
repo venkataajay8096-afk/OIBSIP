@@ -1,0 +1,22 @@
+# Android Studio & Gradle
+.gradle/
+build/
+app/build/
+*.apk
+*.aar
+*.dex
+*.class
+
+# IDE files
+.idea/
+*.iml
+.DS_Store
+local.properties
+captures/
+.externalNativeBuild
+.cxx/
+*.log
+
+# Node & web scratch
+node_modules/
+.venv/
