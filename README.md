@@ -3,7 +3,7 @@
 > **Oasis Infobyte Virtual Internship Program (OIBSIP)**  
 > **Track**: Android App Development  
 > **Task**: Task 3 - Calculator  
-> **Author**: [Your Full Name]
+> **Author**: Venkata Ajay
 
 ---
 
