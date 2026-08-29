@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TodoApp</string>
+    <string name="title_welcome">Welcome Back!</string>
+    <string name="subtitle_login">Sign in to manage your personal tasks</string>
+    <string name="title_register">Create Account</string>
+    <string name="subtitle_register">Sign up for your personal To-Do workspace</string>
+
+    <string name="hint_name">Full Name</string>
+    <string name="hint_email">Email / Username</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_task_name">Task Name (Required)</string>
+    <string name="hint_task_notes">Optional Notes</string>
+
+    <string name="btn_login">Login</string>
+    <string name="btn_register">Register</string>
+    <string name="btn_add_task">Add Task</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_save">Save Task</string>
+
+    <string name="link_to_register">Don\'t have an account? Sign Up</string>
+    <string name="link_to_login">Already have an account? Login</string>
+
+    <string name="empty_tasks_title">No Tasks Found</string>
+    <string name="empty_tasks_subtitle">Tap the "+" button below to add your first personal task!</string>
+
+    <string name="err_empty_fields">Please fill in all required fields</string>
+    <string name="err_invalid_credentials">Invalid email or password. Please try again.</string>
+    <string name="err_user_exists">An account with this email already exists</string>
+    <string name="err_task_empty">Task name cannot be empty</string>
+    
+    <string name="msg_register_success">Account registered successfully! Please login.</string>
+    <string name="msg_task_added">Task saved successfully</string>
+    <string name="msg_task_deleted">Task deleted permanently</string>
+    <string name="msg_logout_success">Logged out successfully</string>
+    <string name="dialog_delete_title">Delete Task</string>
+    <string name="dialog_delete_message">Are you sure you want to permanently delete this task?</string>
+</resources>

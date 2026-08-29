@@ -1,0 +1,418 @@
+/* ===== QuizApp Web Preview Styles ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #3F51B5;
+    --primary-dark: #303F9F;
+    --primary-light: #7986CB;
+    --accent: #FF6F00;
+    --bg-main: #F5F7FA;
+    --bg-card: #FFFFFF;
+    --text-primary: #212121;
+    --text-secondary: #757575;
+    --text-white: #FFFFFF;
+    --correct-green: #4CAF50;
+    --correct-green-light: #E8F5E9;
+    --wrong-red: #F44336;
+    --wrong-red-light: #FFEBEE;
+    --option-stroke: #BDBDBD;
+    --option-selected-bg: #E8EAF6;
+    --option-selected-stroke: #3F51B5;
+    --progress-bg: #E0E0E0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* ===== Screen Management ===== */
+.screen {
+    display: none;
+    width: 100%;
+    max-width: 480px;
+    min-height: 100vh;
+    padding: 24px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.screen.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes toastSlide {
+    0% { bottom: -60px; opacity: 0; }
+    15% { bottom: 30px; opacity: 1; }
+    85% { bottom: 30px; opacity: 1; }
+    100% { bottom: -60px; opacity: 0; }
+}
+
+/* ===== Welcome Screen ===== */
+.welcome-container {
+    text-align: center;
+    animation: slideUp 0.5s ease-out;
+}
+
+.quiz-icon {
+    width: 100px;
+    height: 100px;
+    background: var(--primary);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    margin: 0 auto 32px;
+    box-shadow: 0 8px 24px rgba(63, 81, 181, 0.3);
+}
+
+.welcome-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.welcome-description {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 48px;
+    padding: 0 16px;
+}
+
+/* ===== Buttons ===== */
+.btn {
+    border: none;
+    border-radius: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.3px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-start {
+    background: var(--accent);
+    color: var(--text-white);
+    padding: 16px 64px;
+    font-size: 18px;
+    box-shadow: 0 4px 16px rgba(255, 111, 0, 0.3);
+}
+
+.btn-start:hover {
+    background: #E65100;
+    box-shadow: 0 6px 24px rgba(255, 111, 0, 0.4);
+}
+
+.btn-next {
+    background: var(--primary);
+    color: var(--text-white);
+    padding: 14px 0;
+    width: 100%;
+    font-size: 16px;
+    box-shadow: 0 4px 16px rgba(63, 81, 181, 0.3);
+    margin-top: 16px;
+}
+
+.btn-next:hover {
+    background: var(--primary-dark);
+}
+
+/* ===== Quiz Screen ===== */
+#quizScreen.active {
+    justify-content: flex-start;
+    padding-top: 32px;
+}
+
+.quiz-container {
+    width: 100%;
+    animation: slideUp 0.3s ease-out;
+}
+
+.quiz-header {
+    margin-bottom: 20px;
+}
+
+.question-counter {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 10px;
+    background: var(--progress-bg);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 8px;
+    transition: width 0.4s ease;
+}
+
+.question-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.question-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+/* ===== Options ===== */
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    background: var(--bg-card);
+    border: 2px solid var(--option-stroke);
+    border-radius: 12px;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.option:hover:not(.disabled) {
+    border-color: var(--option-selected-stroke);
+    background: var(--option-selected-bg);
+    transform: translateX(4px);
+}
+
+.option.disabled {
+    cursor: default;
+    pointer-events: none;
+}
+
+.option-letter {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    background: var(--bg-main);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-right: 14px;
+    transition: all 0.2s ease;
+}
+
+.option-text {
+    font-size: 16px;
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+/* Option States */
+.option.correct {
+    background: var(--correct-green-light);
+    border-color: var(--correct-green);
+    animation: pop 0.3s ease;
+}
+
+.option.correct .option-text {
+    color: var(--correct-green);
+    font-weight: 700;
+}
+
+.option.correct .option-letter {
+    background: var(--correct-green);
+    color: var(--text-white);
+}
+
+.option.wrong {
+    background: var(--wrong-red-light);
+    border-color: var(--wrong-red);
+    animation: shake 0.4s ease;
+}
+
+.option.wrong .option-text {
+    color: var(--wrong-red);
+    font-weight: 700;
+}
+
+.option.wrong .option-letter {
+    background: var(--wrong-red);
+    color: var(--text-white);
+}
+
+/* ===== Toast ===== */
+.toast {
+    position: fixed;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0;
+    z-index: 100;
+    white-space: nowrap;
+}
+
+.toast.show {
+    animation: toastSlide 2s ease forwards;
+}
+
+/* ===== Result Screen ===== */
+.result-container {
+    text-align: center;
+    animation: slideUp 0.5s ease-out;
+    width: 100%;
+}
+
+.trophy-icon {
+    width: 100px;
+    height: 100px;
+    background: var(--primary);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    margin: 0 auto 24px;
+    box-shadow: 0 8px 24px rgba(63, 81, 181, 0.3);
+}
+
+.result-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.result-message {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+}
+
+.score-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    text-align: center;
+}
+
+.score-main {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.score-divider {
+    height: 1px;
+    background: var(--option-stroke);
+    margin-bottom: 20px;
+}
+
+.score-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.score-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.correct-row {
+    color: var(--correct-green);
+}
+
+.incorrect-row {
+    color: var(--wrong-red);
+}
+
+/* ===== Responsive ===== */
+@media (max-height: 700px) {
+    .quiz-icon, .trophy-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 36px;
+    }
+    .welcome-title {
+        font-size: 26px;
+    }
+    .welcome-description {
+        margin-bottom: 32px;
+    }
+}

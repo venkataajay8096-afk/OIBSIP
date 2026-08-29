@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Question mark icon for the quiz app -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,28c-8.84,0 -16,7.16 -16,16h8c0,-4.41 3.59,-8 8,-8s8,3.59 8,8c0,8 -12,7 -12,20h8c0,-9 12,-10 12,-20c0,-8.84 -7.16,-16 -16,-16zM50,72h8v8h-8z" />
+</vector>

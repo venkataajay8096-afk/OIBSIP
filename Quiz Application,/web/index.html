@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizApp - Task 4 Oasis Infobyte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Welcome Screen -->
+    <div id="welcomeScreen" class="screen active">
+        <div class="welcome-container">
+            <div class="quiz-icon">❓</div>
+            <h1 class="welcome-title">Quiz Challenge</h1>
+            <p class="welcome-description">Test your General Knowledge with 10 carefully crafted questions. Select the correct answer and see how well you score!</p>
+            <button id="btnStartQuiz" class="btn btn-start" onclick="startQuiz()">Start Quiz</button>
+        </div>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quizScreen" class="screen">
+        <div class="quiz-container">
+            <!-- Header -->
+            <div class="quiz-header">
+                <span id="questionCounter" class="question-counter">Question 1 of 10</span>
+                <div class="progress-bar-container">
+                    <div id="progressBar" class="progress-bar-fill" style="width: 10%"></div>
+                </div>
+            </div>
+
+            <!-- Question Card -->
+            <div class="question-card">
+                <p id="questionText" class="question-text">Sample Question?</p>
+            </div>
+
+            <!-- Options -->
+            <div class="options-container">
+                <div id="option0" class="option" onclick="selectAnswer(0)">
+                    <span class="option-letter">A</span>
+                    <span id="optionText0" class="option-text">Option A</span>
+                </div>
+                <div id="option1" class="option" onclick="selectAnswer(1)">
+                    <span class="option-letter">B</span>
+                    <span id="optionText1" class="option-text">Option B</span>
+                </div>
+                <div id="option2" class="option" onclick="selectAnswer(2)">
+                    <span class="option-letter">C</span>
+                    <span id="optionText2" class="option-text">Option C</span>
+                </div>
+                <div id="option3" class="option" onclick="selectAnswer(3)">
+                    <span class="option-letter">D</span>
+                    <span id="optionText3" class="option-text">Option D</span>
+                </div>
+            </div>
+
+            <!-- Next Button -->
+            <button id="btnNext" class="btn btn-next" onclick="nextQuestion()">Next</button>
+        </div>
+
+        <!-- Toast -->
+        <div id="toast" class="toast">Please select an answer.</div>
+    </div>
+
+    <!-- Result Screen -->
+    <div id="resultScreen" class="screen">
+        <div class="result-container">
+            <div class="trophy-icon">🏆</div>
+            <h1 class="result-title">Quiz Complete!</h1>
+            <p id="resultMessage" class="result-message">🎉 Excellent! Outstanding performance!</p>
+
+            <div class="score-card">
+                <div id="scoreDisplay" class="score-main">Score: 0 / 10</div>
+                <div class="score-divider"></div>
+                <div class="score-detail">
+                    <div class="score-row correct-row">
+                        <span>✅ Correct:</span>
+                        <span id="correctCount">0</span>
+                    </div>
+                    <div class="score-row incorrect-row">
+                        <span>❌ Incorrect:</span>
+                        <span id="incorrectCount">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-start" onclick="restartQuiz()">Restart Quiz</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

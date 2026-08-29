@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors -->
+    <color name="primary">#3F51B5</color>
+    <color name="primary_dark">#303F9F</color>
+    <color name="primary_light">#7986CB</color>
+    <color name="accent">#FF6F00</color>
+
+    <!-- Background Colors -->
+    <color name="background_main">#F5F7FA</color>
+    <color name="background_card">#FFFFFF</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_white">#FFFFFF</color>
+
+    <!-- Answer Feedback Colors -->
+    <color name="correct_green">#4CAF50</color>
+    <color name="correct_green_light">#E8F5E9</color>
+    <color name="wrong_red">#F44336</color>
+    <color name="wrong_red_light">#FFEBEE</color>
+
+    <!-- Option Colors -->
+    <color name="option_default_bg">#FFFFFF</color>
+    <color name="option_default_stroke">#BDBDBD</color>
+    <color name="option_selected_stroke">#3F51B5</color>
+    <color name="option_selected_bg">#E8EAF6</color>
+
+    <!-- Button Colors -->
+    <color name="button_next">#3F51B5</color>
+    <color name="button_start">#FF6F00</color>
+    <color name="button_restart">#3F51B5</color>
+
+    <!-- Progress Bar -->
+    <color name="progress_bg">#E0E0E0</color>
+    <color name="progress_fill">#3F51B5</color>
+</resources>
