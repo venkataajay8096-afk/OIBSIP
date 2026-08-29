@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoApp - Task 2 Oasis Infobyte</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Notification Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- App Container -->
+    <div class="app-viewport">
+
+        <!-- 1. LOGIN SCREEN -->
+        <section id="screenLogin" class="screen active">
+            <div class="auth-header-bg">
+                <div class="auth-header-content">
+                    <div class="brand-logo">
+                        <i class="fa-solid fa-square-check"></i>
+                        <span>TodoApp</span>
+                    </div>
+                    <p class="brand-sub">Oasis Infobyte Internship Task 2</p>
+                </div>
+            </div>
+
+            <div class="auth-card-container">
+                <div class="auth-card">
+                    <div class="card-head">
+                        <h2>Welcome Back</h2>
+                        <p>Sign in to manage your personal tasks</p>
+                    </div>
+
+                    <div id="loginAlert" class="alert alert-danger hidden"></div>
+
+                    <form id="formLogin" onsubmit="handleLogin(event)">
+                        <div class="form-group">
+                            <label for="loginEmail">Email Address</label>
+                            <div class="input-wrapper">
+                                <i class="fa-regular fa-envelope input-icon"></i>
+                                <input type="email" id="loginEmail" placeholder="user@example.com" required autocomplete="email">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-lock input-icon"></i>
+                                <input type="password" id="loginPassword" placeholder="••••••••" required autocomplete="current-password">
+                                <i class="fa-regular fa-eye toggle-pass" onclick="togglePasswordVisibility('loginPassword', this)"></i>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block btn-lg">
+                            <span>Sign In</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </form>
+
+                    <div class="auth-footer">
+                        <p>Don't have an account? <a href="#" onclick="switchScreen('screenRegister')">Create Account</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. REGISTRATION SCREEN -->
+        <section id="screenRegister" class="screen hidden">
+            <div class="auth-header-bg">
+                <div class="auth-header-content">
+                    <div class="brand-logo">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span>TodoApp</span>
+                    </div>
+                    <p class="brand-sub">Create your personal workspace account</p>
+                </div>
+            </div>
+
+            <div class="auth-card-container">
+                <div class="auth-card">
+                    <div class="card-head">
+                        <h2>Create Account</h2>
+                        <p>Sign up to start organizing your personal tasks</p>
+                    </div>
+
+                    <div id="registerAlert" class="alert alert-danger hidden"></div>
+
+                    <form id="formRegister" onsubmit="handleRegister(event)">
+                        <div class="form-group">
+                            <label for="regName">Full Name</label>
+                            <div class="input-wrapper">
+                                <i class="fa-regular fa-user input-icon"></i>
+                                <input type="text" id="regName" placeholder="John Doe" required autocomplete="name">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="regEmail">Email Address</label>
+                            <div class="input-wrapper">
+                                <i class="fa-regular fa-envelope input-icon"></i>
+                                <input type="email" id="regEmail" placeholder="user@example.com" required autocomplete="email">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="regPassword">Password</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-lock input-icon"></i>
+                                <input type="password" id="regPassword" placeholder="At least 4 characters" required minlength="4" autocomplete="new-password">
+                                <i class="fa-regular fa-eye toggle-pass" onclick="togglePasswordVisibility('regPassword', this)"></i>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-accent btn-block btn-lg">
+                            <span>Register Account</span>
+                            <i class="fa-solid fa-check"></i>
+                        </button>
+                    </form>
+
+                    <div class="auth-footer">
+                        <p>Already have an account? <a href="#" onclick="switchScreen('screenLogin')">Login Here</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. MAIN PROTECTED DASHBOARD SCREEN -->
+        <section id="screenDashboard" class="screen hidden">
+            <!-- App Bar Header -->
+            <header class="app-header">
+                <div class="header-left">
+                    <div class="user-avatar" id="headerAvatar">U</div>
+                    <div class="user-info">
+                        <h3 id="headerUserName">Welcome, User!</h3>
+                        <p id="headerUserEmail">user@example.com</p>
+                    </div>
+                </div>
+                <button class="btn-icon btn-logout" onclick="promptLogout()" title="Logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </button>
+            </header>
+
+            <main class="dashboard-body">
+                <!-- Summary Card -->
+                <div class="summary-card">
+                    <div class="summary-info">
+                        <span class="summary-label">MY TASK LIST</span>
+                        <h4 id="taskTotalCounter">0 Tasks total</h4>
+                    </div>
+                    <div class="summary-badge" id="taskCompletedBadge">
+                        0 Completed
+                    </div>
+                </div>
+
+                <!-- Empty State Container -->
+                <div id="emptyState" class="empty-state hidden">
+                    <div class="empty-icon-wrap">
+                        <i class="fa-regular fa-clipboard"></i>
+                    </div>
+                    <h3>No Tasks Found</h3>
+                    <p>Tap the "+" button below to add your first personal task!</p>
+                </div>
+
+                <!-- Task List Container -->
+                <div id="taskList" class="task-list"></div>
+            </main>
+
+            <!-- Floating Action Button -->
+            <button class="fab" onclick="openAddTaskModal()" title="Add Task">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </section>
+
+    </div>
+
+    <!-- ADD TASK MODAL DIALOG -->
+    <div id="addTaskModal" class="modal-backdrop hidden">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Create New Task</h3>
+                <button class="modal-close" onclick="closeAddTaskModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="modalAlert" class="alert alert-danger hidden"></div>
+                <form id="formAddTask" onsubmit="handleAddTask(event)">
+                    <div class="form-group">
+                        <label for="taskTitle">Task Title *</label>
+                        <input type="text" id="taskTitle" placeholder="e.g. Complete Oasis Infobyte Task 2" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskNotes">Notes (Optional)</label>
+                        <textarea id="taskNotes" rows="3" placeholder="Add additional details or links..."></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline" onclick="closeAddTaskModal()">Cancel</button>
+                        <button type="submit" class="btn btn-accent">Save Task</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONFIRMATION MODAL DIALOG -->
+    <div id="confirmModal" class="modal-backdrop hidden">
+        <div class="modal-card modal-card-sm">
+            <div class="modal-header">
+                <h3 id="confirmTitle">Confirm Action</h3>
+                <button class="modal-close" onclick="closeConfirmModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="confirmMessage">Are you sure?</p>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline" onclick="closeConfirmModal()">Cancel</button>
+                    <button type="button" id="btnConfirmAction" class="btn btn-danger">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

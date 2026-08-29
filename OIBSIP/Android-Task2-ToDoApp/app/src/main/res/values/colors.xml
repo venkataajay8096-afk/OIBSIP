@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Primary Colors -->
+    <color name="primary">#3F51B5</color>
+    <color name="primary_dark">#303F9F</color>
+    <color name="primary_light">#E8EAF6</color>
+
+    <!-- Accent & Status Colors -->
+    <color name="accent">#00BFA5</color>
+    <color name="accent_dark">#00897B</color>
+    <color name="accent_light">#E0F2F1</color>
+    
+    <!-- Background & Card Colors -->
+    <color name="bg_app">#F4F6FB</color>
+    <color name="bg_card">#FFFFFF</color>
+    <color name="bg_input">#F8FAFC</color>
+
+    <!-- Typography Colors -->
+    <color name="text_primary">#1E293B</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="text_muted">#94A3B8</color>
+    <color name="text_completed">#A1A1AA</color>
+
+    <!-- Interactive & Alert Colors -->
+    <color name="error">#EF4444</color>
+    <color name="error_light">#FEE2E2</color>
+    <color name="divider">#E2E8F0</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+</resources>
