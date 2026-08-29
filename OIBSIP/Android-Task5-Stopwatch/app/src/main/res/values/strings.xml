@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Stopwatch</string>
+    <string name="app_subtitle">Oasis Infobyte — Android Task 5</string>
+
+    <!-- Timer Defaults -->
+    <string name="default_time">00:00</string>
+    <string name="default_millis">.00</string>
+    <string name="default_full_time">00:00:00</string>
+
+    <!-- Button Labels -->
+    <string name="btn_start">START</string>
+    <string name="btn_pause">PAUSE</string>
+    <string name="btn_resume">RESUME</string>
+    <string name="btn_reset">RESET</string>
+
+    <!-- Status Strings -->
+    <string name="status_ready">READY</string>
+    <string name="status_running">RUNNING</string>
+    <string name="status_paused">PAUSED</string>
+
+    <!-- Info Labels -->
+    <string name="label_minutes">MIN</string>
+    <string name="label_seconds">SEC</string>
+    <string name="label_milliseconds">MS</string>
+    <string name="label_mode">ACCURATE REALTIME TIMER</string>
+</resources>

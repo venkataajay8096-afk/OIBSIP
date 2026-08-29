@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Theme Colors -->
+    <color name="primary">#0F172A</color>
+    <color name="primary_dark">#020617</color>
+    <color name="primary_light">#1E293B</color>
+    <color name="accent">#06B6D4</color>
+
+    <!-- Backgrounds -->
+    <color name="bg_dark">#0B0F19</color>
+    <color name="bg_card">#161F30</color>
+    <color name="bg_card_stroke">#22314E</color>
+    <color name="bg_timer_inner">#0D1524</color>
+    <color name="timer_ring">#06B6D4</color>
+    <color name="timer_ring_bg">#1E293B</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#F8FAFC</color>
+    <color name="text_secondary">#94A3B8</color>
+    <color name="text_muted">#64748B</color>
+    <color name="text_digits">#38BDF8</color>
+    <color name="text_millis">#06B6D4</color>
+
+    <!-- Action Button Colors -->
+    <color name="btn_start_bg">#10B981</color>
+    <color name="btn_start_text">#FFFFFF</color>
+    <color name="btn_pause_bg">#F59E0B</color>
+    <color name="btn_pause_text">#FFFFFF</color>
+    <color name="btn_reset_bg">#EF4444</color>
+    <color name="btn_reset_text">#FFFFFF</color>
+    <color name="btn_disabled_bg">#1E293B</color>
+    <color name="btn_disabled_text">#475569</color>
+
+    <!-- Status indicator -->
+    <color name="status_ready">#38BDF8</color>
+    <color name="status_running">#10B981</color>
+    <color name="status_paused">#F59E0B</color>
+</resources>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StopwatchApp — Android Task 5 OASIS INFOBYTE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="emulator-wrapper">
+    <!-- Phone Frame -->
+    <div class="phone-frame">
+      <!-- Phone Top Notch / Status Bar -->
+      <div class="status-bar">
+        <span class="status-time" id="systemClock">12:30</span>
+        <div class="notch"></div>
+        <div class="status-icons">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 18.23C2.89 16.48 2 14.34 2 12c0-5.52 4.48-10 10-10s10 4.48 10 10c0 2.34-.89 4.48-2.35 6.23l-.62-.62C20.26 16.07 21 14.12 21 12c0-4.97-4.03-9-9-9z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4z"/></svg>
+          <svg width="16" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17 4h-3V2h-4v2H7v18h10V4z"/></svg>
+        </div>
+      </div>
+
+      <!-- App Content (activity_main.xml replica) -->
+      <div class="app-screen">
+        <!-- Header -->
+        <header class="app-header">
+          <div class="app-title-row">
+            <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="13" r="8"></circle>
+              <path d="M12 9v4l2 2"></path>
+              <path d="M10 2h4"></path>
+              <path d="M19 5l1.5 1.5"></path>
+            </svg>
+            <h1 class="app-title">Stopwatch</h1>
+          </div>
+          <p class="app-subtitle">OASIS INFOBYTE — Android Task 5</p>
+
+          <!-- Status Indicator Pill -->
+          <div class="status-pill" id="statusPill">
+            <span class="status-dot"></span>
+            <span id="statusText">READY</span>
+          </div>
+        </header>
+
+        <!-- Circular Stopwatch Dial -->
+        <main class="timer-section">
+          <div class="timer-dial">
+            <svg class="dial-svg" viewBox="0 0 280 280">
+              <circle class="dial-track" cx="140" cy="140" r="126" />
+              <circle class="dial-progress" id="dialProgress" cx="140" cy="140" r="126" />
+            </svg>
+
+            <div class="timer-content">
+              <div class="timer-digits" id="timerDisplay">00:00:00</div>
+              <div class="timer-labels">
+                <span>MIN</span>
+                <span>SEC</span>
+                <span>MS</span>
+              </div>
+              <div class="timer-mode">HIGH PRECISION REALTIME</div>
+            </div>
+          </div>
+        </main>
+
+        <!-- Info Feature Card -->
+        <section class="info-card">
+          <div class="info-card-top">
+            <span class="info-card-title">Real-Time Elapsed Time</span>
+            <span class="elapsed-badge" id="elapsedBadge">0 ms</span>
+          </div>
+          <p class="info-card-desc">
+            Uses <code>SystemClock.elapsedRealtime()</code> &amp; <code>Handler</code> for reliable lifecycle-safe tracking.
+          </p>
+        </section>
+
+        <!-- Action Buttons -->
+        <footer class="controls-row">
+          <!-- START BUTTON -->
+          <button class="btn btn-start" id="btnStart">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            <span id="btnStartText">START</span>
+          </button>
+
+          <!-- PAUSE / STOP BUTTON -->
+          <button class="btn btn-pause" id="btnPause" disabled>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            <span>PAUSE</span>
+          </button>
+
+          <!-- RESET BUTTON -->
+          <button class="btn btn-reset" id="btnReset" disabled>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+            <span>RESET</span>
+          </button>
+        </footer>
+
+        <!-- Android Home Bar -->
+        <div class="home-indicator"></div>
+      </div>
+    </div>
+
+    <!-- Test Controls & Info Panel (for inspection & testing) -->
+    <div class="test-panel">
+      <div class="test-panel-header">
+        <h2>StopwatchApp Test Suite</h2>
+        <span class="badge-oasis">Task 5 — Java &amp; XML</span>
+      </div>
+
+      <div class="test-list">
+        <div class="test-item" id="test1"><span class="test-check">✓</span> <span>TEST 1: Initial 00:00:00 Display</span></div>
+        <div class="test-item" id="test2"><span class="test-check">✓</span> <span>TEST 2: Start counting timer</span></div>
+        <div class="test-item" id="test3"><span class="test-check">✓</span> <span>TEST 3: Repeated Start button clicks safety</span></div>
+        <div class="test-item" id="test4"><span class="test-check">✓</span> <span>TEST 4: Pause/Stop freezes time</span></div>
+        <div class="test-item" id="test5"><span class="test-check">✓</span> <span>TEST 5: Resume from paused timestamp</span></div>
+        <div class="test-item" id="test6"><span class="test-check">✓</span> <span>TEST 6: Reset returns to 00:00:00</span></div>
+        <div class="test-item" id="test7"><span class="test-check">✓</span> <span>TEST 7: Start → Pause → Start consistency</span></div>
+        <div class="test-item" id="test8"><span class="test-check">✓</span> <span>TEST 8: Lifecycle onPause / onResume simulation</span></div>
+        <div class="test-item" id="test9"><span class="test-check">✓</span> <span>TEST 9: Reset while paused</span></div>
+        <div class="test-item" id="test10"><span class="test-check">✓</span> <span>TEST 10: Rapid tapping resilience</span></div>
+      </div>
+
+      <div class="test-actions">
+        <button class="test-btn" id="btnSimulateBackground">Simulate Home / Background (onPause)</button>
+        <button class="test-btn" id="btnRapidTest">Run Automated Rapid Tap Stress Test</button>
+      </div>
+
+      <div class="test-log" id="testLog">Ready. Stopwatch initialized.</div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
