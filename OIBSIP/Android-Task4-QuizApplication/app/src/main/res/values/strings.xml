@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QuizApp</string>
+
+    <!-- Welcome Screen -->
+    <string name="welcome_title">Quiz Challenge</string>
+    <string name="welcome_description">Test your General Knowledge with 10 carefully crafted questions. Select the correct answer and see how well you score!</string>
+    <string name="btn_start_quiz">Start Quiz</string>
+
+    <!-- Quiz Screen -->
+    <string name="question_counter">Question %1$d of %2$d</string>
+    <string name="btn_next">Next</string>
+    <string name="btn_finish">Finish</string>
+    <string name="toast_select_answer">Please select an answer.</string>
+
+    <!-- Result Screen -->
+    <string name="result_title">Quiz Complete!</string>
+    <string name="result_score">Score: %1$d / %2$d</string>
+    <string name="result_correct">Correct: %1$d</string>
+    <string name="result_incorrect">Incorrect: %1$d</string>
+    <string name="btn_restart_quiz">Restart Quiz</string>
+    <string name="result_great">🎉 Excellent! Outstanding performance!</string>
+    <string name="result_good">👍 Good job! Well done!</string>
+    <string name="result_average">📚 Keep learning! You can do better!</string>
+    <string name="result_poor">💪 Don\'t give up! Try again!</string>
+</resources>

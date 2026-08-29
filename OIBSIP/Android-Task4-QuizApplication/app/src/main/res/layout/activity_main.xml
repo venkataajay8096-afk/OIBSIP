@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_main"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="32dp">
+
+    <!-- Quiz Icon -->
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/bg_button_primary"
+        android:gravity="center"
+        android:text="❓"
+        android:textSize="48sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="32dp" />
+
+    <!-- App Title -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_title"
+        android:textColor="@color/text_primary"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="16dp" />
+
+    <!-- Description -->
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/welcome_description"
+        android:textColor="@color/text_secondary"
+        android:textSize="16sp"
+        android:lineSpacingExtra="4dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="48dp" />
+
+    <!-- Start Quiz Button -->
+    <Button
+        android:id="@+id/btnStartQuiz"
+        android:layout_width="250dp"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_button_start"
+        android:text="@string/btn_start_quiz"
+        android:textColor="@color/text_white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textAllCaps="false" />
+
+</LinearLayout>

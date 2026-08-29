@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_main"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <!-- Question Counter Text -->
+        <TextView
+            android:id="@+id/tvQuestionCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Question 1 of 10"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <!-- Progress Bar -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:max="10"
+            android:progress="1"
+            android:progressDrawable="@drawable/bg_progress_bar" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <!-- Question Card -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_card"
+        android:elevation="4dp"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Question Text -->
+        <TextView
+            android:id="@+id/tvQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sample Question?"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:lineSpacingExtra="4dp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <!-- Answer Options -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Option 1 -->
+            <TextView
+                android:id="@+id/tvOption1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_option_default"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="Option A"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <!-- Option 2 -->
+            <TextView
+                android:id="@+id/tvOption2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_option_default"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="Option B"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <!-- Option 3 -->
+            <TextView
+                android:id="@+id/tvOption3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_option_default"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="Option C"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <!-- Option 4 -->
+            <TextView
+                android:id="@+id/tvOption4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_option_default"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="Option D"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="16dp" />
+
+    <!-- Next / Finish Button -->
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@drawable/bg_button_primary"
+        android:text="@string/btn_next"
+        android:textColor="@color/text_white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textAllCaps="false" />
+
+</LinearLayout>
